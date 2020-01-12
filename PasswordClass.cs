@@ -10,73 +10,13 @@ namespace RandomPassword
     {
         public string Password { get; set; }
 
-        private static readonly List<char> _chars = new List<char>() 
-            { 
-                '0',
-                '1',
-                '2',
-                '3',
-                '4',
-                '5',
-                '6',
-                '7',
-                '8',
-                '9',
-                'a',
-                'b',
-                'c',
-                'd',
-                'e',
-                'f',
-                'g',
-                'h',
-                'i',
-                'j',
-                'k',
-                'l',
-                'm',
-                'n',
-                'o',
-                'p',
-                'q',
-                'r',
-                's',
-                't',
-                'u',
-                'v',
-                'w',
-                'x',
-                'y',
-                'z',
-                'Z',
-                'Y',
-                'X',
-                'W',
-                'V',
-                'U',
-                'T',
-                'S',
-                'R',
-                'Q',
-                'P',
-                'O',
-                'N',
-                'M',
-                'L',
-                'K',
-                'J',
-                'I',
-                'H',
-                'G',
-                'F',
-                'E',
-                'D',
-                'C',
-                'B',
-                'A',
-                '.',
-                '_',
-            };
+        private static readonly List<char> _chars = new List<char>();
+
+        static PasswordClass()
+        {
+            var chars = ".0123456789ZaYbXcWdVeUfTgShRiQjPkOlNmMnLoKpJqIrHsGtFuEvDwCxByAz_";
+            _chars.AddRange(chars);
+        }
 
         public static char GetChar(int a)
         {
